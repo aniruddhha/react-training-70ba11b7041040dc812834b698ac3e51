@@ -11,16 +11,9 @@ export function InvoiceTable() {
         { invNum: '7847547356', invDt: '2021-10-10', amt: 409873, sts: 1 },
     ])
 
-    const invoiceRows = invoices.map( (inv, ind) => (
-            // <InvoiceRow 
-            //     invNum={inv.invNum} 
-            //     invDt={inv.invDt}
-            //     amt={inv.amt}
-            //     sts={inv.sts}
-            // />
-
-            // // prop name and key name inside object is same, so we can use spread operator
-            <InvoiceRow {...inv} ind={ind}  />
+    const invoiceRows = invoices.map((inv, ind) => (
+        // prop name and key name inside object is same, so we can use spread operator
+            <InvoiceRow {...inv} ind={ind} />
         )
     )
 
@@ -33,6 +26,7 @@ export function InvoiceTable() {
                     <th>Date</th>
                     <th>Amount</th>
                     <th>Status</th>
+                    <th>Actions</th>
                 </tr>
                 {invoiceRows}
             </table>
@@ -40,14 +34,22 @@ export function InvoiceTable() {
     )
 }
 
+
+// deleting invoice is home work for you 
+// es6 - object shorthand notation
 export function InvoiceRow({ invNum, invDt, amt, sts, ind }) { // props - here id is prop(properties)
-    return(
+
+    const st = { cursor : 'pointer'  }
+    return (
         <tr>
-                <td>{ind + 1}</td>
-                <td>{invNum}</td>
-                <td>{invDt}</td>
-                <td>{amt}</td>
-                <td>{sts == 1 ? '🚩' : '⏳' }</td>
-            </tr>
+            <td>{ind + 1}</td>
+            <td>{invNum}</td>
+            <td>{invDt}</td>
+            <td>{amt}</td>
+            <td>{sts == 1 ? '🚩' : '⏳'}</td>
+            <td>
+                <span style={st}>❌</span>
+            </td>
+        </tr>
     )
 }
