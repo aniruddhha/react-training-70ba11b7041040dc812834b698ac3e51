@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+}
+th {
+    background-color: floralwhite;
+    height: 30px;
+}
+td {
+    height: 30px;
+}
+
+table, th, td {
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+    text-align: center;
+}
