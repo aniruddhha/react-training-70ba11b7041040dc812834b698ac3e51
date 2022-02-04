@@ -12,13 +12,15 @@ export function InvoiceTable() {
     ])
 
     const invoiceRows = invoices.map( (inv, ind) => (
-            <tr>
-                <td>{ind + 1}</td>
-                <td>{inv.invNum}</td>
-                <td>{inv.invDt}</td>
-                <td>{inv.amt}</td>
-                <td>{inv.sts}</td>
-            </tr>
+            // <InvoiceRow 
+            //     invNum={inv.invNum} 
+            //     invDt={inv.invDt}
+            //     amt={inv.amt}
+            //     sts={inv.sts}
+            // />
+
+            // // prop name and key name inside object is same, so we can use spread operator
+            <InvoiceRow {...inv} ind={ind}  />
         )
     )
 
@@ -35,5 +37,17 @@ export function InvoiceTable() {
                 {invoiceRows}
             </table>
         </>
+    )
+}
+
+export function InvoiceRow({ invNum, invDt, amt, sts, ind }) { // props - here id is prop(properties)
+    return(
+        <tr>
+                <td>{ind + 1}</td>
+                <td>{invNum}</td>
+                <td>{invDt}</td>
+                <td>{amt}</td>
+                <td>{sts == 1 ? '🚩' : '⏳' }</td>
+            </tr>
     )
 }
