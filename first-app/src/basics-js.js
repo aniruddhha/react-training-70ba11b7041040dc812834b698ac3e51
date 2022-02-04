@@ -22,3 +22,4 @@ class Car {
 
 const cr = new Car() // car object
 console.log(cr.speed) // printing on browser console
+
