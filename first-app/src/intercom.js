@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+// this inter component communication comes with
+// lot of memory related issues, that has to be addressed properly.
 export function Abc() {
 
     const [fnt, setFnt] = useState(10)
