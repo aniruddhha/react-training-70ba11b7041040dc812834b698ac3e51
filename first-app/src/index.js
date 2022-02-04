@@ -1,9 +1,14 @@
 import React from 'react'; // what is this?
 import ReactDOM from 'react-dom'; // what is this ?
+import { FnComp, ClsComp } from './comp'
 
-const onBtnClk = () => console.log('button clicked')
+let os = 'android'
 
-const os = 'android'
+const onBtnClk = () =>  {
+  os = 'ios' // problem: here is problem h1 is not not getting updated
+  console.log(os) // printing on browser console i.e. in the inspector
+}
+
 const ui = (
     <div>
       {'inside these brackets there is javascript world'}
@@ -15,5 +20,11 @@ const ui = (
 
 const container =  document.getElementById('root')
 
-ReactDOM.render(ui, container);
+ReactDOM.render(
+  <div>
+    <FnComp/>
+    <ClsComp/>
+  </div>, 
+  container
+);
 
