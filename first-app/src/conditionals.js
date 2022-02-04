@@ -20,11 +20,19 @@ export function InsuranceSwitch() {
             <div>
                 <div>
                     <label> Car</label>
-                    <input type='checkbox' onChange={(e) => showCar(e.target.checked)} />
+                    <input 
+                        type='checkbox' 
+                        onChange={(e) => showCar(e.target.checked)} 
+                        checked={shCar}
+                    />
                 </div>
                 <div>
                     <label> Bike </label>
-                    <input type='checkbox' onChange={(e) => showBike(e.target.checked)} />
+                    <input 
+                        type='checkbox' 
+                        onChange={(e) => showBike(e.target.checked)} 
+                        checked={shBike} 
+                    />
                 </div>
             </div>
             <div>
