@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react"
+import { useParams } from 'react-router-dom'
 
 export function Abc() {
     // useEffect
@@ -9,6 +10,8 @@ export function Abc() {
     // speacial hook called useEffect
 
     // you to write a code for addition of two numbers
+
+    const prms = useParams()
 
     const [num1, setNum1] = useState(10)
     const [num2, setNum2] = useState(10)
@@ -20,9 +23,15 @@ export function Abc() {
     // managing state of input boxes in a controlled way
 
     useEffect(() => {
+        console.log(prms)
         // handle the side effect
         // useEffect hook gets invoked on each rerender, provided it depends on second parameter
 
+        setNum1(Number.parseInt(prms['num1']))
+        setNum2(Number.parseInt(prms['num2']))
+
+        setRes(num1 + num2)
+       
         console.log(`Value of res is ${res}`)
 
         return () => { /* side effects are nullified */ }

@@ -19,7 +19,7 @@ const router = (
   <BrowserRouter>
     <Routes>
       <Route path='/' element={ <Home/> }/>  
-      <Route path='abc' element={ <Abc/> }/>
+      <Route path='abc/:num1/:num2' element={ <Abc/> }/>
       <Route path='win' element={ <WindowComp/> }/>
       <Route path='detailed' element={ <Detailed/> }>
         <Route path='personal' element={ <h1> Personal </h1> }/>
