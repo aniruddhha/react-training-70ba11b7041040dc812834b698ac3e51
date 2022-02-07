@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Abc } from './abc'
-
+import { WindowComp } from './window'
+ 
 ReactDOM.render(
   <>
-   <Abc/>
+   <WindowComp/>
   </>,
   document.getElementById('root')
 );

@@ -24,6 +24,8 @@ export function Abc() {
         // useEffect hook gets invoked on each rerender, provided it depends on second parameter
 
         console.log(`Value of res is ${res}`)
+
+        return () => { /* side effects are nullified */ }
     },[res])
 
 
