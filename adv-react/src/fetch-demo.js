@@ -13,7 +13,10 @@ export function SocialPost() {
         .catch(err => console.log(err)) // handling error if any
 
     useEffect(() => {
-        apiCallGet().then(json => setPosts(json))
+        
+        apiCallGet()
+            .then(json => setPosts(json))
+
     }, []) // making api call on initial render only
 
     const uiPosts = posts.map(post => (
