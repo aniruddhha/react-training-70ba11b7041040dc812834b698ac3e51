@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from "react"
+import { Outlet, Link } from "react-router-dom"
 
 export function Detailed() {
 
@@ -20,6 +21,13 @@ export function Detailed() {
             </div>
             <div>
                 <input type='text' style={{ border : '1px solid red' }} placeholder='Prop'/>
+            </div>
+            <div>
+                <Link to='personal'>Personal</Link>
+                <Link to='financial'>Financial</Link>
+            </div>
+            <div>
+                <Outlet/>
             </div>
         </>
     )

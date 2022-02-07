@@ -21,8 +21,12 @@ const router = (
       <Route path='/' element={ <Home/> }/>  
       <Route path='abc' element={ <Abc/> }/>
       <Route path='win' element={ <WindowComp/> }/>
-      <Route path='detailed' element={ <Detailed/> }/>
+      <Route path='detailed' element={ <Detailed/> }>
+        <Route path='personal' element={ <h1> Personal </h1> }/>
+        <Route path='financial' element={ <h1> Financial </h1> }/>
+      </Route>
       <Route path='post' element={ <SocialPost/> }/>
+      <Route path='*' element={ <h1>  Requested Route is ❌ Not Available </h1>}/>
     </Routes>
   </BrowserRouter>
 )
