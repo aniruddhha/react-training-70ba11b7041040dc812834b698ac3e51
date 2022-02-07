@@ -21,9 +21,10 @@ export function Abc() {
 
     useEffect(() => {
         // handle the side effect
+        // useEffect hook gets invoked on each rerender, provided it depends on second parameter
 
         console.log(`Value of res is ${res}`)
-    })
+    },[res])
 
 
     return (
