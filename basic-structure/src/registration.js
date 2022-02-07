@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { ErrorMessage } from './error-msg'
 
 
 export function Registration() {
@@ -13,14 +14,29 @@ export function Registration() {
 
     const onFormSubmit = e => {
         e.preventDefault()
-
-        console.log(e)
         const obj = { email, password, remember }
         console.log(obj)
     }
 
+    const isEmailEntered = () => email.length > 0
+    const isPasswordEntered = () => password.length > 8
+    const isEmailValid = () => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+
+    const formCommonClasess = `container mt-3 border `
+    const formClass = formCommonClasess + (
+        (isEmailEntered() && isPasswordEntered() && isEmailValid()) ?
+            `border-primary` :
+            `border-danger`
+    )
+
     return (
-        <form className='container' onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit} className={formClass}>
             <div className="mb-3">
                 <label className="form-label">
                     Email address
@@ -30,11 +46,10 @@ export function Registration() {
                     className="form-control"
                     value={email}
                     onChange={onEmailChange}
+                    required
                 />
-
-                <div className="form-text">
-                    We'll never share your email with anyone else.
-                </div>
+                <ErrorMessage isError={!isEmailEntered()} msg='❌ Email is mandetory' />
+                <ErrorMessage isError={!isEmailValid()} msg='❌ Wrong Email Pattern' />
             </div>
             <div className="mb-3">
                 <label className="form-label">
@@ -45,7 +60,9 @@ export function Registration() {
                     className="form-control"
                     value={password}
                     onChange={onPasswordChange}
+                    required
                 />
+                <ErrorMessage isError={!isPasswordEntered()} msg='❌ Password is mandetory' />
             </div>
             <div className="mb-3 form-check">
                 <input
