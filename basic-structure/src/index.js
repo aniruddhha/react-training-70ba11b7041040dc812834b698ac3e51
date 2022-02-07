@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Home } from './home'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import { Home } from './home'
+import { Registration } from './registration'
+
 ReactDOM.render(
-  <Home/>,
+  <Registration/>,
   document.getElementById('root')
 );

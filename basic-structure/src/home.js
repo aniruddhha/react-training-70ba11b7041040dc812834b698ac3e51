@@ -1,5 +1,7 @@
 export function Home() {
 
+    // there is nothing to do with react and bootsrap
+    // both are solving different problems.
     return (
         <>
             <div className='container'>
