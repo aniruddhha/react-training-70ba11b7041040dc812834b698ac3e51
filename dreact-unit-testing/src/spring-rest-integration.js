@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export function SpringRestComp() {
 
@@ -6,17 +6,17 @@ export function SpringRestComp() {
     const getApiCall = () => fetch('http://localhost:8080/abc').then(rs => rs.json())
 
     const postApiCall = body => fetch(
-        'http://localhost:8080/abc', 
-        { 
-            method: 'POST', 
-            headers : { 'Content-Type' : 'application/json'}, 
+        'http://localhost:8080/abc',
+        {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body
         }
     )
 
     const deleteApiCall = id => fetch(`http://localhost:8080/abc/${id}`, {
-        method : 'DELETE',
-        headers : { 'Content-Type' : 'application/json'}
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
     })
 
     useEffect(() => {
@@ -32,12 +32,12 @@ export function SpringRestComp() {
         }
 
         postApiCall(JSON.stringify(body))
-            .then( res => res.json() )
-            .then(json => console.log(json))
+            .then(res => res.json())
+            .then(json => setSt(json))
     }
 
     const onDelClk = () => {
-        deleteApiCall(1233).then(res => res.json()).then( json => console.log(json) )
+        deleteApiCall(1233).then(res => res.json()).then(json => console.log(json))
     }
 
     return (

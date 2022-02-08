@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { SpringRestComp } from './spring-rest-integration';
+import { MemOptComp } from './mem-opt'
 
 ReactDOM.render(
-    <SpringRestComp />,
+    <MemOptComp />,
   document.getElementById('root')
 );
 
