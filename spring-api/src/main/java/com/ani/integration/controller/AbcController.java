@@ -29,4 +29,12 @@ public class AbcController {
         dto.setId(System.currentTimeMillis());
         return new ResponseEntity<>(dto, HttpStatus.CREATED);
     }
+
+    // create delete mapping and integrate it with react app
+
+    @DeleteMapping("/{abcId}")
+    public ResponseEntity<Long> delete(@PathVariable Long abcId) {
+        // delete operation using service
+        return ResponseEntity.ok(abcId);
+    }
 }

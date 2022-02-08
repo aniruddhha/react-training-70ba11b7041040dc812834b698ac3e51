@@ -14,6 +14,11 @@ export function SpringRestComp() {
         }
     )
 
+    const deleteApiCall = id => fetch(`http://localhost:8080/abc/${id}`, {
+        method : 'DELETE',
+        headers : { 'Content-Type' : 'application/json'}
+    })
+
     useEffect(() => {
         getApiCall().then(json => setSt(json))
     }, [])
@@ -31,11 +36,18 @@ export function SpringRestComp() {
             .then(json => console.log(json))
     }
 
+    const onDelClk = () => {
+        deleteApiCall(1233).then(res => res.json()).then( json => console.log(json) )
+    }
+
     return (
         <>
             <h1> Name is {st.nm}</h1>
             <div>
                 <input type='button' value='Okay' onClick={onClkOk} />
+            </div>
+            <div>
+                <input type='button' value='Delete' onClick={onDelClk} />
             </div>
         </>
     )
