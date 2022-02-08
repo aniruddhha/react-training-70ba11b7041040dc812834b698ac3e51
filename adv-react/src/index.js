@@ -5,6 +5,7 @@ import { WindowComp } from './window'
 import { Detailed } from './detailed'
 import { SocialPost } from './fetch-demo'
 import { Home } from './home'
+import { UseReducerDemo } from './use-reducer-demo'
  
 import {
   BrowserRouter,
@@ -26,6 +27,7 @@ const router = (
         <Route path='financial' element={ <h1> Financial </h1> }/>
       </Route>
       <Route path='post' element={ <SocialPost/> }/>
+      <Route path='reducer' element={ <UseReducerDemo/> }/>
       <Route path='*' element={ <h1>  Requested Route is ❌ Not Available </h1>}/>
     </Routes>
   </BrowserRouter>
