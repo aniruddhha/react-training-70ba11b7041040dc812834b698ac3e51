@@ -26,7 +26,7 @@ public class AbcController {
 
     @PostMapping
     public ResponseEntity<AbcDto> post(@RequestBody AbcDto dto) {
-        dto.setId(LocalDate.now().toEpochDay());
+        dto.setId(System.currentTimeMillis());
         return new ResponseEntity<>(dto, HttpStatus.CREATED);
     }
 }
