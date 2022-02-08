@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+import { useContext } from "react";
+import { AllDataContext } from ".";
+
 export function Home() {
 
     const navigate = useNavigate()
 
     const onClk = () => navigate('post')
 
+    const commonData = useContext(AllDataContext)
+
     return(
         <>
+            <div>
+                Common Data is {commonData.url}
+            </div>
             <div>
                 <input type='button' value='Okay' onClick={onClk}/>
             </div>

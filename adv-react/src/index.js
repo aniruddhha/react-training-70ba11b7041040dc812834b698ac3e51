@@ -16,8 +16,8 @@ import {
 // React Router - https://reactrouter.com/docs/en/v6/getting-started/overview
 // npm install react-router-dom@6
 
-const AllDataContext = React.createContext()
-const commonData = { url : '' }
+export const AllDataContext = React.createContext()
+const commonData = { url : 'oiuoiuoi' }
 
 const router = (
   
