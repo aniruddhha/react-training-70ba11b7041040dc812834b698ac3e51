@@ -26,3 +26,13 @@ test('check button click', () => {
     
     expect(h1).toHaveTextContent('clicked')
 })
+
+test('check style after click', () => {
+    render(<App />)
+
+    const btn = screen.getByTestId('btn')
+    fireEvent.click(btn)
+
+    const ip = screen.getByTestId('ip')
+    expect(ip.style.border).toBe('1px solid blue')
+})
