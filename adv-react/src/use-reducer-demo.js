@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 
 const initialState = {
     selected : ''
@@ -8,18 +8,19 @@ function btnReducer(state, action) {
     switch(action.type) {
         case 'okay' : {
             console.log('okay clicked')
-            break
+            return { ...state, selected :'contacting fb' }
         }
         case 'hi' : {
             console.log('hi clicked')
-            break
+            return { ...state, selected :'contacting intagram' }
         }
         case 'bye' : {
             console.log('bye clicked')
-            break
+            return { ...state, selected :'contacting whatsapp' }
         }
         default : {
             console.log('unknown type')
+            return state
         }
     } 
 }
@@ -28,9 +29,13 @@ export function UseReducerDemo() {
 
     const [state, dispatch] = useReducer(btnReducer, initialState)
 
-    const onOkClicked = () => dispatch({ type : 'okay'})
+    const onOkClicked = () => dispatch({ type : 'okay'}) 
     const onHiClicked = () => dispatch({type :'hi'})
     const onByeClicked = () => dispatch({type:'bye'})
+
+    useEffect(() => {
+        console.log('after dispatch ', state)
+    }, [state.selected]) 
 
     return(
         <>
