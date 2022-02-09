@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { SpringRestTest } from './spring-rest-demo'
 
 export const WindowComp = () => {
 
@@ -16,6 +17,9 @@ export const WindowComp = () => {
     return (
         <>
             <h1> Current Width is {wd} </h1>
+
+            <SpringRestTest/>
+            
         </>
     )
 }

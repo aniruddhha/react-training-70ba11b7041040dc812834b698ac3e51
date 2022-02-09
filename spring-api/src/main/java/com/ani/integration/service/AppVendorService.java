@@ -1,2 +1,4 @@
-package com.ani.integration.service;public interface AppVendorService {
+package com.ani.integration.service;
+
+public interface AppVendorService {
 }
