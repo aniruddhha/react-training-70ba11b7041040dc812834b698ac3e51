@@ -14,7 +14,7 @@ export function MemOptComp() {
 
     useEffect( () => {
         apiCall().then( pst => setPosts(pst) )
-    }, [cnt])
+    }, [])
     
 
     const onCnt = () => setCnt(cnt + 1)

@@ -1,5 +1,7 @@
 import { useEffect, useReducer } from "react"
 
+// useReducer + useContext = awesome state management
+
 const initialState = {
     selected : ''
 }
